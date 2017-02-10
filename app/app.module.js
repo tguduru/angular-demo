@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var events_app_component_1 = require('./events.app.component');
 var events_list_component_1 = require('./events/events.list.component');
+var events_thumbnail_components_1 = require('./events/events.thumbnail.components');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -19,7 +20,8 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule],
             declarations: [events_app_component_1.EventAppComponent,
-                events_list_component_1.EventsListComponent],
+                events_list_component_1.EventsListComponent,
+                events_thumbnail_components_1.EventsThumbnailComponent],
             bootstrap: [events_app_component_1.EventAppComponent]
         }), 
         __metadata('design:paramtypes', [])

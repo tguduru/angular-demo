@@ -2,15 +2,23 @@ import { Component } from '@angular/core'
 
 @Component({
     selector: 'events-list',
-    templateUrl: 'app/events/event-list.html' // template to display the page, this is good
+    template: `
+    <div>
+        <events-thumbnail (eventClick) = "handleEventClicked($event)" [event]="eventData"></events-thumbnail>
+    </div>
+    `
 })
 
 export class EventsListComponent {
-    event = {
+    eventData = {
         id: 1,
         name: 'Angular Summit',
         price: '699.99',
         location: 'Kansas City'
+    }
+
+    handleEventClicked(data) {
+        console.log(data)
     }
 
 }

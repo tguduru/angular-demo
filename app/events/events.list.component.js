@@ -11,15 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var EventsListComponent = (function () {
     function EventsListComponent() {
-        this.event = {
+        this.eventData = {
             id: 1,
-            name: 'Angular Summit'
+            name: 'Angular Summit',
+            price: '699.99',
+            location: 'Kansas City'
         };
     }
+    EventsListComponent.prototype.handleEventClicked = function (data) {
+        console.log(data);
+    };
     EventsListComponent = __decorate([
         core_1.Component({
             selector: 'events-list',
-            templateUrl: 'app/events/event-list.html' // template to display the page
+            template: "\n    <div>\n        <events-thumbnail (eventClick) = \"handleEventClicked($event)\" [event]=\"eventData\"></events-thumbnail>\n    </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], EventsListComponent);
